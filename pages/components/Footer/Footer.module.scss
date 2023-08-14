@@ -1,0 +1,31 @@
+.btn {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+
+    &Login {
+        color: var(--med-gray);
+        &:hover {
+            text-decoration: underline;
+            color: var(--hoobe-primary);
+        }
+    }
+
+    &Create {
+        font-size: var(--font-size-small);
+        background-color: var(--hoobe-primary);
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        color: var(--white);
+        border-radius: 0.625rem;
+        justify-content: space-between;
+        margin-bottom: 1.125rem;
+        &:hover {
+            background-color: var(--primary-dark);
+        }
+        & img {
+            margin-right: 0.5rem;
+        }
+    }
+}

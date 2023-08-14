@@ -1,0 +1,33 @@
+ul.socialIcons {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+  cursor: pointer;
+
+  li:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+  }
+}
+.socialIcon {
+  background-color: black;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.socialIconWrapper {
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileImage {
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
