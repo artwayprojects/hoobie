@@ -1,11 +1,16 @@
 import Image from 'next/image'
 import VideoPlayer from '../VideoPlayer'
+import getConfig from 'next/config'
 
-import { IMAGES } from '../../constants'
+const { publicRuntimeConfig } = getConfig()
 
 import styles from './Content.module.scss'
 
 export default function Content({ data }) {
+  if (!data) {
+    return
+  }
+
   return (
     <ul className={styles.content}>
       {data.content.map(({ content }) => {
@@ -17,7 +22,9 @@ export default function Content({ data }) {
           <li key={content.id}>
             <a href={content.link}>
               <Image
-                src={`/assets/${IMAGES[content.socialPlatform]}`}
+                src={`/assets/${
+                  publicRuntimeConfig.images[content.socialPlatform]
+                }`}
                 alt={content.altId}
                 width={0}
                 height={0}

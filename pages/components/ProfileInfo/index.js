@@ -1,10 +1,15 @@
 import Image from 'next/image'
+import getConfig from 'next/config'
 
-import { IMAGES } from '../../constants'
+const { publicRuntimeConfig } = getConfig()
 
 import styles from './ProfileInfo.module.scss'
 
 export default function Header({ data }) {
+  if (!data) {
+    return
+  }
+
   return (
     <>
       <div className={styles.profileImage}>
@@ -24,7 +29,9 @@ export default function Header({ data }) {
             <li key={socialInfo.id} className={styles.socialIconWrapper}>
               <div className={styles.socialIcon}>
                 <Image
-                  src={`/assets/${IMAGES[socialInfo.socialPlatform]}`}
+                  src={`/assets/${
+                    publicRuntimeConfig.images[socialInfo.socialPlatform]
+                  }`}
                   alt={socialInfo.altId}
                   width="24"
                   height="24"
